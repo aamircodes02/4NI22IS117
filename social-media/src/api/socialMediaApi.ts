@@ -10,7 +10,11 @@ export async function fetchUserPosts(userId: number) {
   return res.json();
 }
 
-export async function fetchPostComments(postId: number) {
-  const res = await fetch(`${BASE_URL}/posts/${postId}/comments`);
-  return res.json();
-}
+export const fetchPostComments = async (postId: number) => {
+  const response = await fetch(`http://20.244.56.144/evaluation-service/posts/${postId}/comments`);
+  if (!response.ok) throw new Error("Failed to fetch comments");
+  return await response.json();
+};
+
+
+
