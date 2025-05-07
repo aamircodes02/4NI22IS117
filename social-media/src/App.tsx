@@ -7,7 +7,7 @@ import { CssBaseline } from "@mui/material";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <CssBaseline />
       <Routes>
         <Route path="/" element={<Navigate to="/feed" />} />
@@ -15,7 +15,7 @@ function App() {
         <Route path="/top-users" element={<TopUsers />} />
         <Route path="/trending-posts" element={<TrendingPosts />} />
       </Routes>
-    </>
+    </BrowserRouter>
   );
 }
 
